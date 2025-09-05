@@ -10,7 +10,7 @@ import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
 // ✅ Import all components from barrel file
-import { About, Products, Services, Contact } from "./components";
+import { About, Products, Services, Contact } from "./components/Index.js";
 import Layout from "./components/Layout";
 
 const queryClient = new QueryClient();
