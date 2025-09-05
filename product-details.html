@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stainless Steel Pipes & Tubes - Ministero Steel Engineering</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            /* Colors */
+            --primary: 210 100% 50%;
+            --primary-foreground: 0 0% 98%;
+            --secondary: 210 40% 98%;
+            --secondary-foreground: 222.2 84% 4.9%;
+            --muted: 210 40% 96%;
+            --muted-foreground: 215.4 16.3% 46.9%;
+            --accent: 210 40% 94%;
+            --accent-foreground: 222.2 84% 4.9%;
+            --destructive: 0 84.2% 60.2%;
+            --destructive-foreground: 210 40% 98%;
+            --border: 214.3 31.8% 91.4%;
+            --input: 214.3 31.8% 91.4%;
+            --ring: 221.2 83.2% 53.3%;
+            --background: 0 0% 100%;
+            --foreground: 222.2 84% 4.9%;
+            --card: 0 0% 100%;
+            --card-foreground: 222.2 84% 4.9%;
+            --popover: 0 0% 100%;
+            --popover-foreground: 222.2 84% 4.9%;
+
+            /* Gradients */
+            --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(220 100% 60%));
+            --gradient-steel: linear-gradient(135deg, hsl(220 20% 95%), hsl(210 20% 92%));
+
+            /* Shadows */
+            --shadow-steel: 0 4px 6px -1px hsl(var(--primary) / 0.1), 0 2px 4px -1px hsl(var(--primary) / 0.06);
+            --shadow-deep: 0 20px 25px -5px hsl(var(--primary) / 0.1), 0 10px 10px -5px hsl(var(--primary) / 0.04);
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: hsl(var(--background));
+            color: hsl(var(--foreground));
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        .header {
+            background: hsl(var(--background));
+            border-bottom: 1px solid hsl(var(--border));
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: hsl(var(--primary));
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav a {
+            text-decoration: none;
+            color: hsl(var(--foreground));
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: hsl(var(--primary));
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            background: hsl(var(--muted));
+            padding: 1rem 0;
+        }
+
+        .breadcrumb-content {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: hsl(var(--muted-foreground));
+        }
+
+        .breadcrumb a {
+            color: hsl(var(--muted-foreground));
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            color: hsl(var(--primary));
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: all 0.3s;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background: hsl(var(--primary));
+            color: hsl(var(--primary-foreground));
+            box-shadow: var(--shadow-steel);
+        }
+
+        .btn-primary:hover {
+            background: hsl(var(--primary) / 0.9);
+            box-shadow: var(--shadow-deep);
+        }
+
+        .btn-outline {
+            border: 1px solid hsl(var(--primary));
+            background: hsl(var(--background));
+            color: hsl(var(--primary));
+        }
+
+        .btn-outline:hover {
+            background: hsl(var(--primary));
+            color: hsl(var(--primary-foreground));
+        }
+
+        .btn-ghost {
+            background: transparent;
+            color: hsl(var(--foreground));
+        }
+
+        .btn-ghost:hover {
+            background: hsl(var(--accent));
+        }
+
+        .btn-lg {
+            padding: 0.75rem 2rem;
+            font-size: 1rem;
+        }
+
+        /* Cards */
+        .card {
+            background: hsl(var(--card));
+            border: 1px solid hsl(var(--border));
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 hsl(0 0% 0% / 0.1);
+        }
+
+        .card-content {
+            padding: 1.5rem;
+        }
+
+        /* Grid */
+        .grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .grid-cols-1 { grid-template-columns: repeat(1, 1fr); }
+        .grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+        .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+        .grid-cols-4 { grid-template-columns: repeat(4, 1fr); }
+
+        @media (min-width: 768px) {
+            .md\\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+            .md\\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\\:grid-cols-2 { grid-template-columns: repeat(2, 1fr); }
+            .lg\\:grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
+        }
+
+        /* Spacing */
+        .mb-2 { margin-bottom: 0.5rem; }
+        .mb-4 { margin-bottom: 1rem; }
+        .mb-6 { margin-bottom: 1.5rem; }
+        .mb-8 { margin-bottom: 2rem; }
+        .mb-12 { margin-bottom: 3rem; }
+        .mb-16 { margin-bottom: 4rem; }
+        .mt-12 { margin-top: 3rem; }
+        .pt-6 { padding-top: 1.5rem; }
+        .py-4 { padding: 1rem 0; }
+        .py-12 { padding: 3rem 0; }
+        .p-4 { padding: 1rem; }
+        .p-8 { padding: 2rem; }
+
+        /* Text */
+        .text-xs { font-size: 0.75rem; }
+        .text-sm { font-size: 0.875rem; }
+        .text-lg { font-size: 1.125rem; }
+        .text-xl { font-size: 1.25rem; }
+        .text-2xl { font-size: 1.5rem; }
+        .text-3xl { font-size: 1.875rem; }
+        .text-4xl { font-size: 2.25rem; }
+        .font-medium { font-weight: 500; }
+        .font-bold { font-weight: 700; }
+        .text-center { text-align: center; }
+        .text-primary { color: hsl(var(--primary)); }
+        .text-muted { color: hsl(var(--muted-foreground)); }
+
+        /* Badge */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.25rem 0.75rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            border-radius: 9999px;
+            background: hsl(var(--primary));
+            color: hsl(var(--primary-foreground));
+        }
+
+        .badge-outline {
+            background: hsl(var(--background));
+            border: 1px solid hsl(var(--border));
+            color: hsl(var(--foreground));
+        }
+
+        /* Image Gallery */
+        .gallery-main {
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 0.75rem;
+        }
+
+        .gallery-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-main img:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery-thumbs {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+        }
+
+        .gallery-thumb {
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 0.5rem;
+            cursor: pointer;
+        }
+
+        .gallery-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+        }
+
+        .gallery-thumb:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Tabs */
+        .tabs {
+            width: 100%;
+        }
+
+        .tabs-list {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            border-bottom: 1px solid hsl(var(--border));
+        }
+
+        .tabs-trigger {
+            padding: 1rem;
+            background: transparent;
+            border: none;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+
+        .tabs-trigger:hover {
+            background: hsl(var(--muted));
+        }
+
+        .tabs-trigger.active {
+            background: hsl(var(--background));
+            border-bottom-color: hsl(var(--primary));
+            color: hsl(var(--primary));
+        }
+
+        .tabs-content {
+            display: none;
+            padding: 2rem;
+        }
+
+        .tabs-content.active {
+            display: block;
+        }
+
+        /* Features List */
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature-icon {
+            width: 1rem;
+            height: 1rem;
+            color: hsl(var(--primary));
+            flex-shrink: 0;
+        }
+
+        /* Spec Section */
+        .spec-category {
+            margin-bottom: 2rem;
+        }
+
+        .spec-title {
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid hsl(var(--primary) / 0.2);
+        }
+
+        .spec-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .spec-bullet {
+            width: 0.5rem;
+            height: 0.5rem;
+            background: hsl(var(--primary));
+            border-radius: 50%;
+            margin-top: 0.5rem;
+            flex-shrink: 0;
+        }
+
+        /* Trust Indicators */
+        .trust-indicators {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid hsl(var(--border));
+        }
+
+        .trust-item {
+            text-align: center;
+        }
+
+        .trust-icon {
+            width: 1.5rem;
+            height: 1.5rem;
+            color: hsl(var(--primary));
+            margin: 0 auto 0.5rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: hsl(var(--muted));
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background: var(--gradient-steel);
+            border-radius: 0.5rem;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        @media (min-width: 640px) {
+            .contact-buttons {
+                flex-direction: row;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav {
+                display: none;
+            }
+            
+            .text-3xl {
+                font-size: 1.5rem;
+            }
+            
+            .text-4xl {
+                font-size: 1.875rem;
+            }
+            
+            .grid-responsive {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 768px) {
+            .grid-responsive {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .grid-responsive {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-industry"></i>
+                    <span>Ministero Steel Engineering</span>
+                </div>
+                <nav class="nav">
+                    <a href="#home">Home</a>
+                    <a href="#about">About</a>
+                    <a href="#services">Services</a>
+                    <a href="#products">Products</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-content">
+                <a href="#home">Home</a>
+                <span>/</span>
+                <a href="#products">Products</a>
+                <span>/</span>
+                <span style="color: hsl(var(--foreground));">Stainless Steel Pipes & Tubes</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container py-12">
+        <!-- Back Button -->
+        <div class="mb-6">
+            <a href="#products" class="btn btn-ghost">
+                <i class="fas fa-arrow-left"></i>
+                Back to Products
+            </a>
+        </div>
+
+        <!-- Product Header -->
+        <div class="grid grid-responsive mb-16" style="gap: 3rem;">
+            <!-- Image Gallery -->
+            <div>
+                <div class="gallery-main mb-4">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&h=600&fit=crop&crop=center" 
+                         alt="Stainless Steel Pipes & Tubes">
+                </div>
+                <div class="gallery-thumbs">
+                    <div class="gallery-thumb">
+                        <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=300&fit=crop&crop=center" 
+                             alt="Stainless Steel Pipes 1">
+                    </div>
+                    <div class="gallery-thumb">
+                        <img src="https://images.unsplash.com/photo-1581094271901-8022df4466f9?w=400&h=300&fit=crop&crop=center" 
+                             alt="Stainless Steel Pipes 2">
+                    </div>
+                    <div class="gallery-thumb">
+                        <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=400&h=300&fit=crop&crop=center" 
+                             alt="Stainless Steel Pipes 3">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Info -->
+            <div>
+                <div class="badge mb-4">Premium Quality</div>
+                <h1 class="text-3xl md:text-4xl font-bold mb-2">Stainless Steel Pipes & Tubes</h1>
+                <p class="text-xl text-primary font-medium mb-4">High-Quality SS 304, 304L, 316, 316L Pipes & Tubes</p>
+                <p class="text-muted mb-6">Premium quality stainless steel pipes and tubes manufactured to international standards for various industrial applications including chemical, petrochemical, oil & gas, food processing, and pharmaceutical industries.</p>
+
+                <!-- Key Features -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold mb-4">Key Features:</h3>
+                    <div class="grid grid-cols-1" style="gap: 0.5rem;">
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span class="text-muted text-sm">Excellent corrosion resistance</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span class="text-muted text-sm">High temperature resistance</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span class="text-muted text-sm">Superior mechanical properties</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check-circle feature-icon"></i>
+                            <span class="text-muted text-sm">Easy to fabricate and weld</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications -->
+                <div class="mb-6">
+                    <h3 class="text-lg font-bold mb-4">Certifications:</h3>
+                    <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+                        <span class="badge badge-outline">
+                            <i class="fas fa-award" style="margin-right: 0.25rem; width: 0.75rem;"></i>
+                            ISO 9001:2015
+                        </span>
+                        <span class="badge badge-outline">
+                            <i class="fas fa-award" style="margin-right: 0.25rem; width: 0.75rem;"></i>
+                            ASTM Certified
+                        </span>
+                        <span class="badge badge-outline">
+                            <i class="fas fa-award" style="margin-right: 0.25rem; width: 0.75rem;"></i>
+                            ASME Approved
+                        </span>
+                        <span class="badge badge-outline">
+                            <i class="fas fa-award" style="margin-right: 0.25rem; width: 0.75rem;"></i>
+                            CE Marking
+                        </span>
+                    </div>
+                </div>
+
+                <!-- CTA Buttons -->
+                <div style="display: flex; flex-direction: column; gap: 1rem; padding-top: 1.5rem;">
+                    <a href="#contact" class="btn btn-primary btn-lg">
+                        <i class="fas fa-phone"></i>
+                        Get Quote
+                    </a>
+                    <a href="#catalog" class="btn btn-outline btn-lg">
+                        <i class="fas fa-download"></i>
+                        Download Catalog
+                    </a>
+                </div>
+
+                <!-- Trust Indicators -->
+                <div class="trust-indicators">
+                    <div class="trust-item">
+                        <i class="fas fa-shield-alt trust-icon"></i>
+                        <p class="text-xs text-muted">ISO Certified</p>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-truck trust-icon"></i>
+                        <p class="text-xs text-muted">Fast Delivery</p>
+                    </div>
+                    <div class="trust-item">
+                        <i class="fas fa-star trust-icon"></i>
+                        <p class="text-xs text-muted">30+ Years</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Detailed Information Tabs -->
+        <div class="card">
+            <div class="tabs" id="productTabs">
+                <div class="tabs-list">
+                    <button class="tabs-trigger active" data-tab="specifications">Specifications</button>
+                    <button class="tabs-trigger" data-tab="applications">Applications</button>
+                    <button class="tabs-trigger" data-tab="features">Features</button>
+                    <button class="tabs-trigger" data-tab="testing">Testing</button>
+                </div>
+
+                <div class="tabs-content active" id="specifications">
+                    <h3 class="text-xl font-bold mb-6">Technical Specifications</h3>
+                    <div class="grid md:grid-cols-2" style="gap: 2rem;">
+                        <div class="spec-category">
+                            <h4 class="spec-title">Material Grades</h4>
+                            <div class="spec-item">
+                                <div class="spec-bullet"></div>
+                                <span class="text-muted text-sm">SS 304</span>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-bullet"></div>
+                                <span class="text-muted text-sm">SS 304L</span>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-bullet"></div>
+                                <span class="text-muted text-sm">SS 316</span>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-bullet"></div>
+                                <span class="text-muted text-sm">SS 316L</span>
+                            </div>
+                        </div>
+                        
+                        <div class="spec-category">
+                            <h4 class="spec-title">Size Range</h4>
+                            <div class="spec-item">
+                                <div class="spec-bullet"></div>
+                                <span class="text-muted text-sm">1/8" NB to 48" NB</span>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-bullet"></div>
+                                <span class="text-muted text-sm">Outer Diameter: 6mm to 1220mm</span>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-bullet"></div>
+                                <span class="text-muted text-sm">Wall Thickness: 0.5mm to 50mm</span>
+                            </div>
+                        </div>
+                        
+                        <div class="spec-category">
+                            <h4 class="spec-title">Length</h4>
+                            <div class="spec-item">
+                                <div class="spec-bullet"></div>
+                                <span class="text-muted text-sm">Single Random Length: 4-7 meters</span>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-bullet"></div>
+                                <span class="text-muted text-sm">Double Random Length: 10-12 meters</span>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-bullet"></div>
+                                <span class="text-muted text-sm">Custom lengths available</span>
+                            </div>
+                        </div>
+                        
+                        <div class="spec-category">
+                            <h4 class="spec-title">Standards</h4>
+                            <div class="spec-item">
+                                <div class="spec-bullet"></div>
+                                <span class="text-muted text-sm">ASTM A312</span>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-bullet"></div>
+                                <span class="text-muted text-sm">ASTM A213</span>
+                            </div>
+                            <div class="spec-item">
+                                <div class="spec-bullet"></div>
+                                <span class="text-muted text-sm">ASME SA312</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tabs-content" id="applications">
+                    <h3 class="text-xl font-bold mb-6">Industrial Applications</h3>
+                    <div class="grid md:grid-cols-2 lg:grid-cols-3">
+                        <div class="card p-4" style="transition: box-shadow 0.3s;">
+                            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                <div style="width: 2rem; height: 2rem; background: hsl(var(--primary) / 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-check-circle" style="color: hsl(var(--primary)); font-size: 1rem;"></i>
+                                </div>
+                                <span class="font-medium">Chemical & Petrochemical Industry</span>
+                            </div>
+                        </div>
+                        <div class="card p-4">
+                            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                <div style="width: 2rem; height: 2rem; background: hsl(var(--primary) / 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-check-circle" style="color: hsl(var(--primary)); font-size: 1rem;"></i>
+                                </div>
+                                <span class="font-medium">Oil & Gas Refineries</span>
+                            </div>
+                        </div>
+                        <div class="card p-4">
+                            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                <div style="width: 2rem; height: 2rem; background: hsl(var(--primary) / 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-check-circle" style="color: hsl(var(--primary)); font-size: 1rem;"></i>
+                                </div>
+                                <span class="font-medium">Food & Beverage Processing</span>
+                            </div>
+                        </div>
+                        <div class="card p-4">
+                            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                <div style="width: 2rem; height: 2rem; background: hsl(var(--primary) / 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-check-circle" style="color: hsl(var(--primary)); font-size: 1rem;"></i>
+                                </div>
+                                <span class="font-medium">Pharmaceutical Manufacturing</span>
+                            </div>
+                        </div>
+                        <div class="card p-4">
+                            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                <div style="width: 2rem; height: 2rem; background: hsl(var(--primary) / 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-check-circle" style="color: hsl(var(--primary)); font-size: 1rem;"></i>
+                                </div>
+                                <span class="font-medium">Power Generation Plants</span>
+                            </div>
+                        </div>
+                        <div class="card p-4">
+                            <div style="display: flex; align-items: center; gap: 0.75rem;">
+                                <div style="width: 2rem; height: 2rem; background: hsl(var(--primary) / 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                                    <i class="fas fa-check-circle" style="color: hsl(var(--primary)); font-size: 1rem;"></i>
+                                </div>
+                                <span class="font-medium">Water Treatment Facilities</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tabs-content" id="features">
+                    <h3 class="text-xl font-bold mb-6">Product Features & Benefits</h3>
+                    <div class="grid md:grid-cols-2" style="gap: 1.5rem;">
+                        <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 1rem; background: hsl(var(--muted) / 0.5); border-radius: 0.5rem;">
+                            <i class="fas fa-check-circle" style="color: hsl(var(--primary)); font-size: 1.25rem; margin-top: 0.125rem; flex-shrink: 0;"></i>
+                            <span class="font-medium">Excellent corrosion resistance</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 1rem; background: hsl(var(--muted) / 0.5); border-radius: 0.5rem;">
+                            <i class="fas fa-check-circle" style="color: hsl(var(--primary)); font-size: 1.25rem; margin-top: 0.125rem; flex-shrink: 0;"></i>
+                            <span class="font-medium">High temperature resistance</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 1rem; background: hsl(var(--muted) / 0.5); border-radius: 0.5rem;">
+                            <i class="fas fa-check-circle" style="color: hsl(var(--primary)); font-size: 1.25rem; margin-top: 0.125rem; flex-shrink: 0;"></i>
+                            <span class="font-medium">Superior mechanical properties</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 1rem; background: hsl(var(--muted) / 0.5); border-radius: 0.5rem;">
+                            <i class="fas fa-check-circle" style="color: hsl(var(--primary)); font-size: 1.25rem; margin-top: 0.125rem; flex-shrink: 0;"></i>
+                            <span class="font-medium">Easy to fabricate and weld</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 1rem; background: hsl(var(--muted) / 0.5); border-radius: 0.5rem;">
+                            <i class="fas fa-check-circle" style="color: hsl(var(--primary)); font-size: 1.25rem; margin-top: 0.125rem; flex-shrink: 0;"></i>
+                            <span class="font-medium">Low maintenance requirements</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 1rem; background: hsl(var(--muted) / 0.5); border-radius: 0.5rem;">
+                            <i class="fas fa-check-circle" style="color: hsl(var(--primary)); font-size: 1.25rem; margin-top: 0.125rem; flex-shrink: 0;"></i>
+                            <span class="font-medium">Hygienic and food-grade</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="tabs-content" id="testing">
+                    <h3 class="text-xl font-bold mb-6">Quality Testing & Inspection</h3>
+                    <div class="grid md:grid-cols-2" style="gap: 1.5rem;">
+                        <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 1rem; border: 1px solid hsl(var(--primary) / 0.2); border-radius: 0.5rem;">
+                            <i class="fas fa-shield-alt" style="color: hsl(var(--primary)); font-size: 1.25rem; margin-top: 0.125rem; flex-shrink: 0;"></i>
+                            <span class="font-medium">Chemical Composition Analysis</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 1rem; border: 1px solid hsl(var(--primary) / 0.2); border-radius: 0.5rem;">
+                            <i class="fas fa-shield-alt" style="color: hsl(var(--primary)); font-size: 1.25rem; margin-top: 0.125rem; flex-shrink: 0;"></i>
+                            <span class="font-medium">Mechanical Properties Testing</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 1rem; border: 1px solid hsl(var(--primary) / 0.2); border-radius: 0.5rem;">
+                            <i class="fas fa-shield-alt" style="color: hsl(var(--primary)); font-size: 1.25rem; margin-top: 0.125rem; flex-shrink: 0;"></i>
+                            <span class="font-medium">Hydrostatic Pressure Testing</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 1rem; border: 1px solid hsl(var(--primary) / 0.2); border-radius: 0.5rem;">
+                            <i class="fas fa-shield-alt" style="color: hsl(var(--primary)); font-size: 1.25rem; margin-top: 0.125rem; flex-shrink: 0;"></i>
+                            <span class="font-medium">Non-Destructive Testing (NDT)</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 1rem; border: 1px solid hsl(var(--primary) / 0.2); border-radius: 0.5rem;">
+                            <i class="fas fa-shield-alt" style="color: hsl(var(--primary)); font-size: 1.25rem; margin-top: 0.125rem; flex-shrink: 0;"></i>
+                            <span class="font-medium">Dimensional Inspection</span>
+                        </div>
+                        <div style="display: flex; align-items: flex-start; gap: 0.75rem; padding: 1rem; border: 1px solid hsl(var(--primary) / 0.2); border-radius: 0.5rem;">
+                            <i class="fas fa-shield-alt" style="color: hsl(var(--primary)); font-size: 1.25rem; margin-top: 0.125rem; flex-shrink: 0;"></i>
+                            <span class="font-medium">Surface Finish Verification</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+            <h3 class="text-2xl font-bold mb-4">Need Custom Specifications or Bulk Orders?</h3>
+            <p class="text-muted mb-6" style="max-width: 48rem; margin-left: auto; margin-right: auto;">
+                Our technical team is ready to assist you with custom requirements, 
+                technical specifications, and competitive pricing for bulk orders.
+            </p>
+            <div class="contact-buttons">
+                <a href="tel:+919869006100" class="btn btn-primary btn-lg">
+                    <i class="fas fa-phone"></i>
+                    Call Now: +91 98690 06100
+                </a>
+                <a href="mailto:info@ministerosteel.com" class="btn btn-outline btn-lg">
+                    <i class="fas fa-envelope"></i>
+                    Email Inquiry
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="text-center">
+                <p class="text-muted">&copy; 2024 Ministero Steel Engineering Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Tab functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabTriggers = document.querySelectorAll('.tabs-trigger');
+            const tabContents = document.querySelectorAll('.tabs-content');
+
+            tabTriggers.forEach(trigger => {
+                trigger.addEventListener('click', () => {
+                    const targetTab = trigger.getAttribute('data-tab');
+                    
+                    // Remove active class from all triggers and contents
+                    tabTriggers.forEach(t => t.classList.remove('active'));
+                    tabContents.forEach(c => c.classList.remove('active'));
+                    
+                    // Add active class to clicked trigger and corresponding content
+                    trigger.classList.add('active');
+                    document.getElementById(targetTab).classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

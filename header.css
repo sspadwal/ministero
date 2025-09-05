@@ -1,0 +1,186 @@
+body {
+    margin: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.top-contact-bar {
+    background: #1e293b;
+    color: #fff;
+    padding: 0.5rem 0;
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .top-contact-bar {
+        display: block;
+    }
+}
+
+.container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.contact-info {
+    display: flex;
+    gap: 2rem;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.certified {
+    font-size: 0.95rem;
+}
+
+.main-nav {
+    width: 100%;
+    background: transparent;
+    padding: 1.2rem 0 0.8rem 0;
+}
+
+.nav-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo-group {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo-img {
+    height: 48px;
+    width: auto;
+}
+
+.logo-text h1 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #22223b;
+    margin: 0;
+}
+
+.logo-text p {
+    font-size: 0.95rem;
+    color: #64748b;
+    margin: 0;
+}
+
+@media (max-width: 640px) {
+    .logo-text {
+        display: none;
+    }
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: #22223b;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+    font-size: 1rem;
+}
+
+.nav-links a:hover {
+    color: #0ea5e9;
+}
+
+.get-quote-btn {
+    background: #0ea5e9;
+    color: #fff !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-left: 0.5rem;
+    transition: background 0.2s;
+}
+
+.get-quote-btn:hover {
+    background: #0369a1;
+}
+
+.menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    display: none;
+}
+
+.menu-btn svg {
+    display: block;
+}
+
+@media (max-width: 1024px) {
+    .nav-links {
+        display: none;
+    }
+    .menu-btn {
+        display: block;
+    }
+}
+
+
+/* Mobile Nav */
+
+.mobile-nav {
+    display: none;
+    flex-direction: column;
+    gap: 1.2rem;
+    padding: 1.2rem 1rem 1.5rem 1rem;
+    border-top: 1px solid #e5e7eb;
+    background: #fff;
+}
+
+.mobile-nav a {
+    color: #22223b;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    transition: color 0.2s;
+}
+
+.mobile-nav a:hover {
+    color: #0ea5e9;
+}
+
+.mobile-nav .get-quote-btn {
+    align-self: flex-start;
+    margin-top: 0.5rem;
+}
+
+@media (max-width: 1024px) {
+    .mobile-nav {
+        display: none;
+    }
+    .mobile-nav.open {
+        display: flex;
+    }
+}
