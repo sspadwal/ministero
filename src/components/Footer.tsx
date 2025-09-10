@@ -74,7 +74,7 @@ export const Footer = () => {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3 mb-6">
               <img
-                src="/lovable-uploads/a6122368-f8f8-483a-ae5d-3561ffdc5f2f.png"
+                src="/logo.png"
                 alt="Ministero Steel Engineering"
                 className="h-10 w-auto"
               />
