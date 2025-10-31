@@ -22,11 +22,15 @@ export const Header = () => {
           <div className="flex items-center gap-6">
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4" />
-              <span>+91 98765 43210</span>
+              <span>+91 8657448665</span>
             </div>
             <div className="flex items-center gap-2">
               <Mail className="w-4 h-4" />
-              <span>info@ministerosteel.com</span>
+              <span> puneet@ministerosteel.com</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <Mail className="w-4 h-4" />
+              <span> ministerosteel@gmail.com</span>
             </div>
           </div>
           <div className="text-sm">ISO 9001:2015 Certified Company</div>
