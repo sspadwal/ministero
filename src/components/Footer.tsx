@@ -89,10 +89,13 @@ export const Footer = () => {
               worldwide.
             </p>
             <div className="space-y-3">
-              <div className="flex items-center gap-3 text-sm">
+              <div className="flex  gap-3 text-sm">
                 <MapPin className="w-4 h-4 text-primary-glow flex-shrink-0" />
                 <span className="text-gray-300">
-                  Industrial Area, Sector 62, Noida, UP 201309
+                  1st Floor, Neo Pearl Building, No. 42, 2nd Carpenter Street,
+                  Charni Road (East),
+                  <br /> Cawasji Patel Tank, Bhuleshwar, <br />
+                  Mumbai, Maharashtra – 400004
                 </span>
               </div>
               <div className="flex items-center gap-3 text-sm">

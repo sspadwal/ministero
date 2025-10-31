@@ -18,10 +18,7 @@ export const Contact = () => {
       icon: Building,
       title: "Head Office",
       details: [
-        "Ministero Steel Engineering Pvt. Ltd.",
-        "Industrial Area, Sector 62",
-        "Noida, Uttar Pradesh 201309",
-        "India",
+        "1st Floor, Neo Pearl Building, No. 42, 2nd Carpenter Street, Charni Road (East), Cawasji Patel Tank, Bhuleshwar, Mumbai, Maharashtra – 400004",
       ],
     },
     {
