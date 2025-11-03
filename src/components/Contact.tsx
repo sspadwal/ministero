@@ -43,26 +43,26 @@ export const Contact = () => {
     },
   ];
 
-  const offices = [
-    {
-      city: "Mumbai",
-      address: "Office 205, Business Hub, Andheri East, Mumbai - 400069",
-      phone: "+91 22 2674 5123",
-      email: "mumbai@ministerosteel.com",
-    },
-    {
-      city: "Chennai",
-      address: "3rd Floor, Steel Plaza, T. Nagar, Chennai - 600017",
-      phone: "+91 44 2815 6789",
-      email: "chennai@ministerosteel.com",
-    },
-    {
-      city: "Bangalore",
-      address: "Unit 12, Industrial Estate, Peenya, Bangalore - 560058",
-      phone: "+91 80 2839 4567",
-      email: "bangalore@ministerosteel.com",
-    },
-  ];
+  // const offices = [
+  //   {
+  //     city: "Mumbai",
+  //     address: "Office 205, Business Hub, Andheri East, Mumbai - 400069",
+  //     phone: "+91 22 2674 5123",
+  //     email: "mumbai@ministerosteel.com",
+  //   },
+  //   {
+  //     city: "Chennai",
+  //     address: "3rd Floor, Steel Plaza, T. Nagar, Chennai - 600017",
+  //     phone: "+91 44 2815 6789",
+  //     email: "chennai@ministerosteel.com",
+  //   },
+  //   {
+  //     city: "Bangalore",
+  //     address: "Unit 12, Industrial Estate, Peenya, Bangalore - 560058",
+  //     phone: "+91 80 2839 4567",
+  //     email: "bangalore@ministerosteel.com",
+  //   },
+  // ];
 
   return (
     <section id="contact" className="py-20 bg-gradient-steel">
@@ -220,7 +220,7 @@ export const Contact = () => {
         </div>
 
         {/* Regional Offices */}
-        <div className="mb-12">
+        {/* <div className="mb-12">
           <h3 className="text-2xl font-bold text-foreground text-center mb-8">
             Our Regional Offices
           </h3>
@@ -252,7 +252,7 @@ export const Contact = () => {
               </Card>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* Map & CTA */}
         <div className="bg-background rounded-2xl p-8 text-center shadow-steel">
